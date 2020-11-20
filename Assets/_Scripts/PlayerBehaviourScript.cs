@@ -27,5 +27,14 @@ public class PlayerBehaviourScript : MonoBehaviour
             // move left
             spriteRenderer.flipX = true;
         }
+
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+        Vector2 position = transform.position;
+        position.x = position.x + 0.02f * horizontal;
+        position.y = position.y + 0.02f * vertical;
+        transform.position = position;
+
     }
 }
